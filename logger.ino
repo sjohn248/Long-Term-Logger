@@ -47,8 +47,8 @@ void setup() {
 void serialOut(float voltage, float lux, float temp, float hum){
   Serial.print("VOLTAGE: ");
   Serial.println(voltage);
-  Serial.print("Light (lux):    ");
-	Serial.println(lux);
+  Serial.print("Light (lux): ");
+  Serial.println(lux);
   Serial.print("Temp: "); Serial.print(temp); Serial.println(" C");
   Serial.print("Hum: "); Serial.print(hum); Serial.println("% rH\n");
 }
@@ -57,7 +57,7 @@ void fileOut(File dataFile, float voltage, float lux, float temp, float hum){
   dataFile.print("Volts: ");
   dataFile.println(voltage);
   dataFile.print("Light (lux): ");
-	dataFile.println(lux);
+  dataFile.println(lux);
   dataFile.print("Temp: "); dataFile.print(temp); dataFile.println(" C");
   dataFile.print("Hum: "); dataFile.print(hum); dataFile.println("% rH\n");
 }
@@ -127,7 +127,7 @@ void loop() {
       prevMillis = currentMillis;
     }
     fileOut(dataFile, voltage, lux, temp, hum);
-  //  serialOut(voltage, lux, temp, hum);
+  //serialOut(voltage, lux, temp, hum);
     dataFile.close();
   }
   else{
